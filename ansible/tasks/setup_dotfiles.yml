@@ -39,4 +39,4 @@
     group: "{{ ansible_user }}"
     mode: "0755"
   with_fileglob:
-    - "files/dotfiles/.*"
+    - "files/configs/.*"
