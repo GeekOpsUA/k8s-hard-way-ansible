@@ -4,6 +4,11 @@ on:
     paths:
       - "ansible/**"
 
+permissions:
+  issues: write
+  pull-requests: write
+  actions: write
+
 jobs:
   build:
     name: Ansible Lint # Naming the build is important to use it as a status check
