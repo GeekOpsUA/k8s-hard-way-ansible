@@ -25,15 +25,15 @@ updates:
         labels:
           - "python"
           - "dependencies"
-      minor-and-patch:
-        applies-to: "security-updates"
-        update-types:
-          - "patch"
-          - "minor"
-        labels:
-          - "python"
-          - "dependencies"
-          - "security"
+      # minor-and-patch:
+      #   applies-to: "security-updates"
+      #   update-types:
+      #     - "patch"
+      #     - "minor"
+      #   labels:
+      #     - "python"
+      #     - "dependencies"
+      #     - "security"
     commit-message:
       prefix: "pip: "
       include: "scope"
