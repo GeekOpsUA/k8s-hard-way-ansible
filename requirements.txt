@@ -106,7 +106,7 @@ requests-oauthlib==2.0.0
     # via kubernetes
 resolvelib==1.0.1
     # via ansible-core
-rich==13.8.1
+rich==13.9.3
     # via ansible-lint
 rpds-py==0.20.0
     # via
