@@ -16,14 +16,14 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    labels:
+      - "python"
+      - "dependencies"
     groups:
-      upgrades:
+      updates:
         applies-to: "version-updates"
         update-types: 
           - "minor"
-        labels:
-          - "python"
-          - "dependencies"
     commit-message:
       prefix: "pip: "
       include: "scope"
