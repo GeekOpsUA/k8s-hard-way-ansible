@@ -29,7 +29,7 @@ charset-normalizer==3.4.0
     # via requests
 click==8.1.7
     # via black
-cryptography==43.0.1
+cryptography==44.0.0
     # via ansible-core
 docker==7.1.0
 filelock==3.16.1
