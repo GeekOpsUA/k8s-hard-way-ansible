@@ -8,8 +8,8 @@ ansible-core==2.18.1
     #   ansible
     #   ansible-compat
     #   ansible-lint
-ansible-lint==24.10.0
-attrs==24.2.0
+ansible-lint==24.12.2
+attrs==24.3.0
     # via
     #   jsonschema
     #   referencing
@@ -19,7 +19,7 @@ bracex==2.5.post1
     # via wcmatch
 cachetools==5.5.0
     # via google-auth
-certifi==2024.8.30
+certifi==2024.12.14
     # via
     #   kubernetes
     #   requests
@@ -34,7 +34,7 @@ cryptography==44.0.0
 docker==7.1.0
 filelock==3.16.1
     # via ansible-lint
-google-auth==2.36.0
+google-auth==2.37.0
     # via kubernetes
 idna==3.10
     # via requests
@@ -108,7 +108,7 @@ resolvelib==1.1.0
     # via ansible-core
 rich==13.9.4
     # via ansible-lint
-rpds-py==0.21.0
+rpds-py==0.22.3
     # via
     #   jsonschema
     #   referencing
@@ -119,7 +119,7 @@ ruamel-yaml==0.18.6
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
 ruff==0.8.1
-six==1.16.0
+six==1.17.0
     # via
     #   kubernetes
     #   python-dateutil
@@ -127,7 +127,7 @@ subprocess-tee==0.4.2
     # via
     #   ansible-compat
     #   ansible-lint
-urllib3==2.2.3
+urllib3==2.3.0
     # via
     #   docker
     #   kubernetes
