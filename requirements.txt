@@ -114,7 +114,7 @@ rpds-py==0.22.3
     #   referencing
 rsa==4.9
     # via google-auth
-ruamel-yaml==0.18.7
+ruamel-yaml==0.18.8
     # via ansible-lint
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
