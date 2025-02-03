@@ -12,6 +12,7 @@
 
     # Get the private IP address of the control plane and load balancer nodes
     - name: Read /etc/hosts file
+      become: true
       ansible.builtin.slurp:
         src: /etc/hosts
       register: hosts_file_content
@@ -253,11 +254,17 @@
           - nonRepudiation
           - digitalSignature
           - keyEncipherment
+        extended_key_usage:
+          - serverAuth
         subject:
           CN: "etcd-server"
           O: "Kubernetes"
         subject_alt_name: |
-          DNS:localhost;
+          DNS:kubernetes;
+          DNS:kubernetes.default;
+          DNS:kubernetes.default.svc;
+          DNS:kubernetes.default.svc.cluster;
+          DNS:kubernetes.default.svc.cluster.local;
           IP:{{ controlplane01_ip }};
           IP:{{ controlplane02_ip }};
           IP:127.0.0.1

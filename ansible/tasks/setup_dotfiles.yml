@@ -1,42 +1,69 @@
 ---
-- name: Update apt cache
+
+- name: General Setup
   become: true
-  ansible.builtin.apt:
-    update_cache: true
-    cache_valid_time: 3600
+  block:
+    - name: Set timezone
+      ansible.builtin.timezone:
+        name: "Europe/Kyiv"
 
-- name: Install requirements
-  become: true
-  ansible.builtin.package:
-    name:
-      - curl
-      - git
-      - htop
-      - lnav
-      - tmux
-      - vim
-      - zsh
-    state: present
+    - name: Purge ntp
+      ansible.builtin.package:
+        name: ntp
+        state: absent
 
-- name: Set zsh as default shell
-  become: true
-  ansible.builtin.user:
-    name: "{{ ansible_user }}"
-    shell: /bin/zsh
+    - name: Setup time synchronization
+      ansible.builtin.systemd:
+        name: systemd-timesyncd
+        enabled: true
+        state: started
 
-- name: Clone Oh My Zsh
-  ansible.builtin.git:
-    repo: https://github.com/robbyrussell/oh-my-zsh.git
-    dest: /home/{{ ansible_user }}/.oh-my-zsh
-    single_branch: true
-    version: master
+    - name: Update apt cache
+      become: true
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
 
-- name: Copy dotfiles
-  ansible.builtin.copy:
-    src: "{{ item }}"
-    dest: /home/{{ ansible_user }}/
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
-    mode: "0755"
-  with_fileglob:
-    - "files/configs/.*"
+    - name: Update security packages
+      become: true
+      ansible.builtin.apt:
+        upgrade: safe
+        update_cache: true
+
+    - name: Install requirements
+      become: true
+      ansible.builtin.package:
+        name:
+          - curl
+          - git
+          - htop
+          - lnav
+          - tmux
+          - vim
+          - zsh
+        state: present
+
+    - name: Set zsh as default shell
+      become: true
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        shell: /bin/zsh
+
+- name: Dotfiles Setup
+  block:
+    - name: Clone Oh My Zsh
+      ansible.builtin.git:
+        repo: https://github.com/robbyrussell/oh-my-zsh.git
+        dest: /home/{{ ansible_user }}/.oh-my-zsh
+        single_branch: true
+        version: master
+
+    - name: Copy dotfiles
+      ansible.builtin.copy:
+        src: "{{ item }}"
+        dest: /home/{{ ansible_user }}/
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: "0755"
+      with_fileglob:
+        - "files/configs/.*"
