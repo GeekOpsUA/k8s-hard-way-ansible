@@ -1,4 +1,13 @@
-{% set counter = {'dns': 2,'ip': 1,} %}{% macro increment(dct, key, inc=1)%}{% if dct.update({key: dct[key] + inc}) %} {% endif %}{% endmacro %}[req]
+{# Set the counter for DNS and IP
+The counter is used to increment the DNS and IP values for each host
+DNS values start from 2 and IP values start from 1 #}
+{% set counter = {'dns': 2,'ip': 1,} %}
+{% macro increment(dct, key, inc=1) %}
+{% if dct.update({key: dct[key] + inc}) %}
+{% endif %}
+{% endmacro %}
+
+[req]
 req_extensions = v3_req
 distinguished_name = req_distinguished_name
 
