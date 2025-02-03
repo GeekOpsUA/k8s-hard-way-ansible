@@ -3,7 +3,7 @@
 ansible==10.4.0
 ansible-compat==24.10.0
     # via ansible-lint
-ansible-core==2.18.1
+ansible-core==2.18.2
     # via
     #   ansible
     #   ansible-compat
