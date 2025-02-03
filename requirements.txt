@@ -32,9 +32,9 @@ click==8.1.7
 cryptography==44.0.0
     # via ansible-core
 docker==7.1.0
-filelock==3.16.1
+filelock==3.17.0
     # via ansible-lint
-google-auth==2.37.0
+google-auth==2.38.0
     # via kubernetes
 idna==3.10
     # via requests
@@ -82,7 +82,7 @@ pyasn1-modules==0.4.1
     # via google-auth
 pycparser==2.22
     # via cffi
-pygments==2.18.0
+pygments==2.19.1
     # via rich
 python-dateutil==2.9.0.post0
     # via kubernetes
@@ -93,7 +93,7 @@ pyyaml==6.0.2
     #   ansible-lint
     #   kubernetes
     #   yamllint
-referencing==0.35.1
+referencing==0.36.2
     # via
     #   jsonschema
     #   jsonschema-specifications
@@ -118,7 +118,7 @@ ruamel-yaml==0.18.8
     # via ansible-lint
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
-ruff==0.8.1
+ruff==0.9.4
 six==1.17.0
     # via
     #   kubernetes
