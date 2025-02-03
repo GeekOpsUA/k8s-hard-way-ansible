@@ -1,5 +1,7 @@
 # Provisioning of Kubernetes the hard way with Ansible
 
+![Created](https://img.shields.io/date/1709472651.svg?style=flat-square&logo=github&label=created)
+![Repo size](https://img.shields.io/github/repo-size/GeekOpsUA/k8s-hard-way-ansible?style=flat-square)
 [![OpenSSF best practices badge](https://www.bestpractices.dev/projects/8789/badge)](https://www.bestpractices.dev/en/projects/8789)
 [![openssf scorecards](https://api.securityscorecards.dev/projects/github.com/GeekOpsUA/k8s-hard-way-ansible/badge)](https://api.securityscorecards.dev/projects/github.com/GeekOpsUA/k8s-hard-way-ansible)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=GeekOpsUA_k8s-hard-way-ansible&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=GeekOpsUA_k8s-hard-way-ansible)
