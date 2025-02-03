@@ -29,5 +29,9 @@ dependencies = [
     "ansible-lint",
 ]
 
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
 [project.urls]
 Repository = "https://github.com/searge/k8s-hard-way-ansible.git"
