@@ -29,7 +29,7 @@
       ansible.builtin.copy:
         src: "{{ local_certs_path }}/{{ item }}"
         dest: "~/"
-        mode: '0644'
+        mode: "0644"
       with_items:
         - ca.crt
         - ca.key
@@ -56,7 +56,7 @@
       ansible.builtin.copy:
         src: "{{ local_certs_path }}/{{ item }}"
         dest: "~/"
-        mode: '0644'
+        mode: "0644"
       with_items:
         - ca.crt
         - kube-proxy.crt
@@ -92,7 +92,7 @@
       ansible.builtin.copy:
         src: "{{ local_certs_path }}/kube-proxy.kubeconfig"
         dest: "~/"
-        mode: '0644'
+        mode: "0644"
       tags: kubeconfig_copy
 
     - name: Copy the appropriate kubeconfig files to each controller node
@@ -100,7 +100,7 @@
       ansible.builtin.copy:
         src: "{{ local_certs_path }}/{{ item }}.kubeconfig"
         dest: "~/"
-        mode: '0644'
+        mode: "0644"
       with_items:
         - admin
         - kube-controller-manager

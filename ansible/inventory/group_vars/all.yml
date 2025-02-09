@@ -1,4 +1,4 @@
-﻿---
+---
 ansible_user: core
 base_timezone: "Europe/Kyiv"
 

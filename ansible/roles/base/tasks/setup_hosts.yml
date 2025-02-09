@@ -92,7 +92,7 @@
       ansible.builtin.lineinfile:
         path: /etc/systemd/resolved.conf
         backup: true
-        regexp: '^#DNS='
+        regexp: "^#DNS="
         line: "DNS={{ base_primary_dns }}"
 
     - name: Restart systemd-resolved

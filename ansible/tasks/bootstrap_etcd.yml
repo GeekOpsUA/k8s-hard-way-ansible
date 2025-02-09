@@ -43,13 +43,13 @@
       ansible.builtin.get_url:
         url: "{{ etcd_google_url }}/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-{{ arch_var.stdout }}.tar.gz"
         dest: "/tmp/etcd-{{ etcd_version }}-linux-{{ arch_var.stdout }}.tar.gz"
-        mode: '0644'
+        mode: "0644"
 
     - name: Make etcd download directory
       ansible.builtin.file:
         path: "/tmp/etcd-download-test"
         state: directory
-        mode: '0755'
+        mode: "0755"
 
     - name: Unarchive a file with extra options
       ansible.builtin.unarchive:
@@ -70,7 +70,7 @@
         remote_src: true
         src: "/tmp/etcd-download-test/{{ item }}"
         dest: "/usr/local/bin/{{ item }}"
-        mode: '0755'
+        mode: "0755"
       with_items:
         - etcd
         - etcdctl
@@ -96,7 +96,7 @@
       ansible.builtin.file:
         path: "{{ item }}"
         state: directory
-        mode: '0755'
+        mode: "0755"
       with_items:
         - "{{ k8s_lib_pki }}"
         - "{{ etcd_config }}"
@@ -106,7 +106,7 @@
       ansible.builtin.copy:
         src: "{{ item }}"
         dest: "{{ etcd_config }}"
-        mode: '0600'
+        mode: "0600"
       with_items:
         - "{{ local_certs_path }}/etcd-server.key"
         - "{{ local_certs_path }}/etcd-server.crt"
@@ -115,7 +115,7 @@
       ansible.builtin.copy:
         src: "{{ local_certs_path }}/ca.crt"
         dest: "{{ k8s_lib_pki }}"
-        mode: '0600'
+        mode: "0600"
 
     - name: Make symlink for CA to etcd config directory
       ansible.builtin.file:
@@ -127,7 +127,7 @@
       ansible.builtin.template:
         src: "db/etcd.service.j2"
         dest: "/etc/systemd/system/etcd.service"
-        mode: '0644'
+        mode: "0644"
 
     - name: Reload systemd
       ansible.builtin.systemd:

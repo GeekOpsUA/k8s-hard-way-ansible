@@ -1,5 +1,4 @@
 ---
-
 - name: Get ARCH variable from /etc/environment
   ansible.builtin.shell:
     cmd: "set -o pipefail ; grep -E '^ARCH=' /etc/environment | cut -d'=' -f2"
@@ -18,7 +17,7 @@
   ansible.builtin.get_url:
     url: "https://dl.k8s.io/release/{{ kubectl_version.content }}/bin/linux/{{ arch_var.stdout }}/kubectl"
     dest: /usr/local/bin/kubectl
-    mode: '0755'
+    mode: "0755"
 
 - name: Print kubectl version
   ansible.builtin.shell:

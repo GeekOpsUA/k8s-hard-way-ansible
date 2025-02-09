@@ -24,4 +24,3 @@
   tags: dotfiles
   ansible.builtin.import_tasks:
     file: update_dotfiles.yml
-

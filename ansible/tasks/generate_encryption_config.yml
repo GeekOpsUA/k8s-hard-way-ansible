@@ -20,10 +20,10 @@
       ansible.builtin.file:
         path: "{{ k8s_lib_dir }}"
         state: directory
-        mode: '0755'
+        mode: "0755"
 
     - name: Generate encryption config
       ansible.builtin.template:
         src: k8s/encryption-config.yaml.j2
         dest: "{{ k8s_lib_dir }}/encryption-config.yaml"
-        mode: '0644'
+        mode: "0644"
