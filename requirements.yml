@@ -1,9 +1,9 @@
 ---
 collections:
   - name: ansible.posix
-    version: 1.5.4
+    version: 1.6.2
   - name: community.general
-    version: 7.2.0
+    version: 10.3.0
   - community.crypto
     # https://docs.ansible.com/ansible/latest/collections/community/crypto/index.html
   - community.docker

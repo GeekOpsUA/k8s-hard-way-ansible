@@ -38,10 +38,12 @@ rules:
   comments:
     require-starting-space: true
     ignore-shebangs: true
-    min-spaces-from-content: 2
+    min-spaces-from-content: 1
 
-  comments-indentation:
-    level: warning
+  comments-indentation: false
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true
 
   indentation:
     spaces: 2
