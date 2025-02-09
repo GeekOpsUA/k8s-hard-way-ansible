@@ -1,0 +1,26 @@
+---
+# tasks file for base
+- name: Kernel Setup
+  tags: kernel
+  ansible.builtin.import_tasks:
+    file: setup_kernel.yml
+
+- name: Hosts Setup
+  tags: hosts
+  ansible.builtin.import_tasks:
+    file: setup_hosts.yml
+
+- name: Update timezone
+  tags: time
+  ansible.builtin.import_tasks:
+    file: update_time.yml
+
+- name: General Setup
+  tags: packages
+  ansible.builtin.import_tasks:
+    file: update_packages.yml
+
+- name: Dotfiles Setup
+  tags: dotfiles
+  ansible.builtin.import_tasks:
+    file: update_dotfiles.yml

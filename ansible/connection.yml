@@ -1,4 +1,4 @@
-﻿---
+---
 # tests connection with ansible user pointed in inventory file
 - name: Test connection to the webservers
   hosts:

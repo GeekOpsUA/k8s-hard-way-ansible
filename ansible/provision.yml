@@ -2,15 +2,6 @@
 - name: Provision servers
   hosts: all
   gather_facts: true
-  tasks:
-    - name: Set up kernel parameters, modules and tunables
-      ansible.builtin.include_tasks: tasks/setup_kernel.yml
-      tags: kernel
 
-    - name: Sets up hosts file and DNS
-      ansible.builtin.include_tasks: tasks/setup_hosts.yml
-      tags: hosts
-
-    - name: Setup dotfiles
-      ansible.builtin.include_tasks: tasks/setup_dotfiles.yml
-      tags: dotfiles
+  roles:
+    - base

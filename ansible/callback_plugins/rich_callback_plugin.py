@@ -19,3 +19,8 @@ class CallbackModule(CallbackBase):
 
     # You can add more methods to handle other events like
     # v2_runner_on_unreachable, v2_playbook_on_start, etc.
+    def v2_runner_on_unreachable(self, **kwargs):
+        pass
+
+    def v2_playbook_on_start(self, result, **kwargs):
+        pass

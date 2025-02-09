@@ -1,4 +1,4 @@
-﻿---
+---
 vagrant:
   children:
     vagrant_control:
@@ -12,19 +12,18 @@ vagrant:
       hosts:
         node01:
         node02:
-
 kube_control_plane:
   children:
     vagrant_control:
-
 etcd:
   children:
     vagrant_control:
-
+kube_load_balancer:
+  children:
+    vagrant_lb:
 kube_nodes:
   children:
     vagrant_nodes:
-
 k8s_cluster:
   children:
     kube_control_plane:
