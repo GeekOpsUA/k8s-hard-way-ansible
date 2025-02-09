@@ -1,6 +1,6 @@
 ﻿---
 ansible_user: core
-k8s_timezone: "Europe/Kyiv"
+base_timezone: "Europe/Kyiv"
 
 #############################################
 # MARK: - Kubernetes specific variables

@@ -1,0 +1,27 @@
+---
+- name: Update packages, install additional packages, set zsh as default shell
+  become: true
+  block:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: "{{ base_cache_valid_time }}"
+
+    - name: Update security packages
+      when: ansible_os_family == "Debian"
+      ansible.builtin.apt:
+        upgrade: safe
+        update_cache: true
+
+    - name: Install additional packages
+      when:
+        - base_additional_packages is defined
+        - base_additional_packages is not none
+      ansible.builtin.package:
+        name: "{{ base_additional_packages }}"
+        state: present
+
+    - name: Set zsh as default shell
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        shell: /bin/zsh

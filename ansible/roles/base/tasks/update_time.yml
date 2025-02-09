@@ -1,0 +1,18 @@
+---
+- name: Update Time
+  become: true
+  block:
+    - name: Set timezone
+      community.general.timezone:
+        name: "{{ base_timezone }}"
+
+    - name: Purge ntp
+      ansible.builtin.package:
+        name: ntp
+        state: absent
+
+    - name: Setup time synchronization
+      ansible.builtin.systemd:
+        name: systemd-timesyncd
+        enabled: true
+        state: started
