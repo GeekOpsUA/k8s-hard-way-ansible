@@ -32,7 +32,7 @@ click==8.1.7
 cryptography==44.0.1
     # via ansible-core
 docker==7.1.0
-filelock==3.20.1
+filelock==3.20.3
     # via ansible-lint
 google-auth==2.38.0
     # via kubernetes
@@ -74,7 +74,7 @@ pathspec==0.12.1
     #   yamllint
 platformdirs==4.3.6
     # via black
-pyasn1==0.6.1
+pyasn1==0.6.2
     # via
     #   pyasn1-modules
     #   rsa
@@ -127,7 +127,7 @@ subprocess-tee==0.4.2
     # via
     #   ansible-compat
     #   ansible-lint
-urllib3==2.6.0
+urllib3==2.6.3
     # via
     #   docker
     #   kubernetes
